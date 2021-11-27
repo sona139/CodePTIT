@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            text-align: center;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .Button{
+            padding: 12px;
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+            animation: button 1s linear infinite;
+            width:300px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+        .Button:hover{
+            background-color: rgb(31, 26, 26);
+            
+        }
+        @keyframes button{
+            from {
+                background-color: rgb(47, 241, 63);
+            }
+            to{
+                background-color: rgb(247, 26, 26);
+            }
+        }
+        
+        .main_button{
+            text-align: center;
+            padding: 12px;
+            margin-bottom: 20px;
+        }
+        table{
+            
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        tr,th{
+            border: 1px solid black;
+            padding:20px;
+        }
+        tr,td{
+            border: 1px solid black;
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class = "Button">Click here</div>
+        <div class="main_button">
+            <table class = "table"></table>
+        </div>
+        
+    </div>
+   
+</body>
+<script>
+    var List_Table = [
+        {
+            name: 'Bố',
+            age: 30,
+            add: 'Việt Nam'
+        },
+        {
+            name: 'Mẹ',
+            age: 15,
+            add: 'Việt Nam'
+        },
+        {
+            name: 'Em',
+            age: 3,
+            add: 'Việt Nam'
+        },
+		{
+			name: 'Chị',
+			age: 5,
+			add: 'Việt Nam',
+		}
+    ]
+    var Click = document.querySelector('.Button');
+    Click.onclick = function() {
+        var Read =
+			`<tr>
+                <th>Họ và tên</th>
+                <th>Tuổi</th>
+                <th>Địa chỉ</th>
+            </tr>`;
+        var Table = document.querySelector('table');
+        List_Table.forEach(tab => {
+            Read +=
+			`<tr>
+            	<td>${tab.name}</td>
+               	<td>${tab.age}</td>
+               	<td>${tab.add}</td>
+           	</tr>`
+        })
+        Table.innerHTML = Read;
+    }
+</script>
+</html>
