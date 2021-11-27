@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var a = prompt('Giá trị của a là: ');
+    var b = prompt('Giá trị của b là: ');
+    var c = prompt('Giá trị của c là: ');
+    var denta = b*b - 4*a*c;
+	if(denta < 0){
+        document.write('<h1>Phương trình vô nghiệm</h1>');
+    }
+    else if(denta == 0){  
+        var x = -b/(2*a);
+        document.write('<h1>Phương trình có nghiệm kép là x = </h1>' + x);
+    }
+    else{
+        var x1 = (-b + Math.sqrt(denta))/(2*a);
+        var x2 = (-b - Math.sqrt(denta))/(2*a);
+        document.write(`<h1>Phương trình có nghiệm x1 = ${x1}</h1>`);
+        document.write(`<h1>Phương trình có nghiệm x2 = ${x2}</h1>`);
+    }
+</script>
+</html>
